@@ -53,6 +53,7 @@ if ($user_id) {
       exit();
     }
   }
+  <img src="https://graph.facebook.com/me/picture"/>
 
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
