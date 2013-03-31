@@ -175,12 +175,6 @@ $app_name = idx($app_info, 'name', '');
   </head>
   <body>
 
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#
-appId=YOUR_APP_ID&amp;xfbml=1"></script>
-
-<fb:login-button show-faces="true" width="200" max-rows="1" 
-perms="user_likes, friends_likes"></fb:login-button>
 
     <div id="fb-root"></div>
     <script type="text/javascript">
