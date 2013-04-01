@@ -1,7 +1,7 @@
 <?php
 //###Define Facebook Application ID and Secret; then get cookie
-define('FACEBOOK_APP_ID', 'Your website facebook application ID');
-define('FACEBOOK_SECRET', 'Your website facebook secret');
+define('FACEBOOK_APP_ID', '478174598904856');
+define('FACEBOOK_SECRET', 'e7a9947ac59f9c5a264cd83f68689d80');
 function get_facebook_cookie($app_id, $application_secret) {
   $args = array();
   parse_str(trim($_COOKIE['fbs_' . $app_id], '"'), $args);
