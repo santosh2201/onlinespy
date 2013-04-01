@@ -18,6 +18,7 @@ function get_facebook_cookie($app_id, $application_secret) {
   return $args;
 }
 $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
+echo $cookie;
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
