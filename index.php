@@ -289,7 +289,7 @@ $app_name = idx($app_info, 'name', '');
               $picture = idx($photo, 'picture');
               $link = idx($photo, 'link');
 
-              $class = ($i++ % 4 === 0) ? 'first-column' : '';
+              $class = ($i++ % 30 === 0) ? 'first-column' : '';
           ?>
           <li style="background-image: url(<?php echo he($picture); ?>);" class="<?php echo $class; ?>">
             <a href="<?php echo he($link); ?>" target="_top"></a>
