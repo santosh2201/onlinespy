@@ -58,13 +58,13 @@ if ($user_id) {
   // This fetches some things that you like . 'limit=*" only returns * values.
   // To see the format of the data you are retrieving, use the "Graph API
   // Explorer" which is at https://developers.facebook.com/tools/explorer/
-  $likes = idx($facebook->api('/me/likes?limit=40'), 'data', array());
+  $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
 
   // This fetches 4 of your friends.
-  $friends = idx($facebook->api('/me/friends?limit=45'), 'data', array());
+  $friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
 
   // And this returns 16 of your photos.
-  $photos = idx($facebook->api('/me/photos?limit=160'), 'data', array());
+  $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
 
   // Here is an example of a FQL call that fetches all of your friends that are
   // using this app
@@ -72,7 +72,13 @@ if ($user_id) {
     'method' => 'fql.query',
     'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
   ));
+$myme = $facebook->api(array(
+    'method' => 'fql.query',
+    'query' => 'SELECT uid, name, pic_square FROM user WHERE uid = me()'
+  ));
+
 }
+
 
 // Fetch the basic info of the app that they are using
 $app_info = $facebook->api('/'. AppInfo::appID());
@@ -289,7 +295,7 @@ $app_name = idx($app_info, 'name', '');
               $picture = idx($photo, 'picture');
               $link = idx($photo, 'link');
 
-              $class = ($i++ % 30 === 0) ? 'first-column' : '';
+              $class = ($i++ % 4 === 0) ? 'first-column' : '';
           ?>
           <li style="background-image: url(<?php echo he($picture); ?>);" class="<?php echo $class; ?>">
             <a href="<?php echo he($link); ?>" target="_top"></a>
@@ -349,6 +355,8 @@ $app_name = idx($app_info, 'name', '');
     <?php
       }
     ?>
-
+<?php
+echo $myme;
+ ?>
   </body>
 </html>
