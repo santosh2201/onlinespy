@@ -63,7 +63,7 @@ foreach($statuses['data'] as $status){
  // processing comments array for calculating fanbase
             $frid = $comArray['from']['id'];
             $frname = $comArray['from']['name'];
-echo $frname;
+echo '<p>'.$frname.'</p>';
 }
 
 }
