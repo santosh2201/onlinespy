@@ -22,7 +22,7 @@
   $access_token = substr(file_get_contents($token_url), 13);
 
   // run fql query
-  $fql_query_url = 'https://graph.facebook.com/'
+/*  $fql_query_url = 'https://graph.facebook.com/'
     . 'fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()'
     . '&access_token=' . $access_token;
   $fql_query_result = file_get_contents($fql_query_url);
@@ -46,5 +46,17 @@
   echo '<pre>';
   print_r("multi query results:");
   print_r($fql_multiquery_obj);
-  echo '</pre>';
+  echo '</pre>';  */
+
+$params = array('method' => 'fql.query',
+                'query' => 'SELECT uid, pic_square, name 
+                 FROM user 
+                 WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) 
+                 ORDER BY mutual_friend_count DESC'
+
+$friend_array = $facebook->api($params);
+echo $friend_array;
+
+
+
 ?>
