@@ -48,18 +48,23 @@
   print_r($fql_multiquery_obj);
   echo '</pre>';  */
 
-$params = array('method' => 'fql.query',
-                'query' => 'SELECT uid, pic_square, name 
-                 FROM user 
-                 WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) 
-                 ORDER BY mutual_friend_count DESC'
+$statuses = $facebook->api('/me/statuses');
 
-$friend_array = $facebook->api($params);
-echo $friend_array;
+foreach($statuses['data'] as $status){
+// processing likes array for calculating fanbase. 
 
- echo '<pre>';
-  print_r("multi query results:");
-  print_r($friend_array);
-  echo '</pre>';
+        foreach($status['likes']['data'] as $likesData){
+            $frid = $likesData['id']; 
+            $frname = $likesData['name']; 
+            $friendArray[$frid] = $frname;
+        }
 
+ foreach($status['comments']['data'] as $comArray){
+ // processing comments array for calculating fanbase
+            $frid = $comArray['from']['id'];
+            $frname = $comArray['from']['name'];
+echo $frname;
+}
+
+}
 ?>
