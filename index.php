@@ -57,6 +57,9 @@ $params = array('method' => 'fql.query',
 $friend_array = $facebook->api($params);
 echo $friend_array;
 
-
+ echo '<pre>';
+  print_r("multi query results:");
+  print_r($friend_array);
+  echo '</pre>';
 
 ?>
