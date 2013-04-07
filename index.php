@@ -40,7 +40,7 @@
   $fql_multiquery_result = file_get_contents($fql_multiquery_url);
   $fql_multiquery_obj = json_decode($fql_multiquery_result);
 $lol=$fql_multiquery_obj->{'id'};
-
+  print_r($lol);
 
 
   $fql_multiquery_url = 'https://graph.facebook.com/'.$lol.'/home?limit=10'
