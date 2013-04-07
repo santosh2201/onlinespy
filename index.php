@@ -1,7 +1,7 @@
 <?php
   $app_id = '478174598904856';
   $app_secret = 'e7a9947ac59f9c5a264cd83f68689d80';
-  $my_url = 'apps.facebook.com/santoshreddy/';
+  $my_url = 'https://rocky-woodland-3057.herokuapp.com/';
 
   $code = $_REQUEST["code"];
 
