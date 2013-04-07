@@ -46,7 +46,7 @@
 print_r("I have given a limit value of 10 so only recent 10 news feeds will be shown, we can increase this value");
   print_r($fql_multiquery_result);
   print_r($fql_multiquery_obj);
-print $fql_multiquery_obj->{'id'};
+print $fql_multiquery_result->{'id'};
   echo '</pre>';  
 
 
