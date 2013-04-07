@@ -46,11 +46,12 @@ $lol=$fql_multiquery_obj->{'id'};
   $fql_multiquery_url = 'https://graph.facebook.com/'.$lol.'/home?limit=10'
     . '&access_token=' . $access_token;
   $fql_multiquery_result = file_get_contents($fql_multiquery_url);
-  $fql_multiquery_obj = json_decode($fql_multiquery_result);
+  $fql_multiquery_obj = json_decode($fql_multiquery_result,true);
 
   // display results of fql multiquery
   echo '<pre>';
  // print_r("multi query results:");
+  print_r($lol);
 print_r("I have given a limit value of 10 so only recent 10 news feeds will be shown, we can increase this value");
   //print_r($fql_multiquery_result);
   print_r($fql_multiquery_obj);
