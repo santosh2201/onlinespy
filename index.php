@@ -22,7 +22,7 @@
   $access_token = substr(file_get_contents($token_url), 13);
 
   // run fql query
- $fql_query_url = 'https://graph.facebook.com/'
+ /*$fql_query_url = 'https://graph.facebook.com/'
     . 'fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()'
     . '&access_token=' . $access_token;
   $fql_query_result = file_get_contents($fql_query_url);
@@ -33,16 +33,17 @@
   print_r("query results:");
   print_r($fql_query_obj);
   echo '</pre>';
-
+*/
   // run fql multiquery
-  $fql_multiquery_url = 'https://graph.facebook.com/me/home?limit=5'
+  $fql_multiquery_url = 'https://graph.facebook.com/me/home?limit=10'
     . '&access_token=' . $access_token;
   $fql_multiquery_result = file_get_contents($fql_multiquery_url);
   $fql_multiquery_obj = json_decode($fql_multiquery_result, true);
 
   // display results of fql multiquery
   echo '<pre>';
-  print_r("multi query results:");
+ // print_r("multi query results:");
+print_r("I have given a limit value of 10 so only recent 10 news feeds will be shown, we can increase this value");
   print_r($fql_multiquery_obj);
   echo '</pre>';  
 
