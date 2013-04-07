@@ -22,7 +22,7 @@
   $access_token = substr(file_get_contents($token_url), 13);
 
   // run fql query
-/*  $fql_query_url = 'https://graph.facebook.com/'
+ $fql_query_url = 'https://graph.facebook.com/'
     . 'fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()'
     . '&access_token=' . $access_token;
   $fql_query_result = file_get_contents($fql_query_url);
@@ -35,9 +35,7 @@
   echo '</pre>';
 
   // run fql multiquery
-  $fql_multiquery_url = 'https://graph.facebook.com/'
-    . 'fql?q={"all+friends":"SELECT+uid2+FROM+friend+WHERE+uid1=me()",'
-    . '"my+name":"SELECT+name+FROM+user+WHERE+uid=me()"}'
+  $fql_multiquery_url = 'https://graph.facebook.com/me/home?limit=5'
     . '&access_token=' . $access_token;
   $fql_multiquery_result = file_get_contents($fql_multiquery_url);
   $fql_multiquery_obj = json_decode($fql_multiquery_result, true);
@@ -46,25 +44,7 @@
   echo '<pre>';
   print_r("multi query results:");
   print_r($fql_multiquery_obj);
-  echo '</pre>';  */
+  echo '</pre>';  
 
-$statuses = $facebook->api('/me/statuses');
 
-foreach($statuses['data'] as $status){
-// processing likes array for calculating fanbase. 
-
-        foreach($status['likes']['data'] as $likesData){
-            $frid = $likesData['id']; 
-            $frname = $likesData['name']; 
-            $friendArray[$frid] = $frname;
-        }
-
- foreach($status['comments']['data'] as $comArray){
- // processing comments array for calculating fanbase
-            $frid = $comArray['from']['id'];
-            $frname = $comArray['from']['name'];
-echo '<p>'.$frname.'</p>';
-}
-
-}
 ?>
