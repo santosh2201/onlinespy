@@ -35,7 +35,7 @@
   echo '</pre>';
 */
   // run fql multiquery
-  $fql_multiquery_url = 'https://graph.facebook.com/me/home?limit=10'
+  $fql_multiquery_url = 'https://graph.facebook.com/me?fields=id'
     . '&access_token=' . $access_token;
   $fql_multiquery_result = file_get_contents($fql_multiquery_url);
   $fql_multiquery_obj = json_decode($fql_multiquery_result, true);
