@@ -41,6 +41,8 @@
   $fql_multiquery_obj = json_decode($fql_multiquery_result);
 $lol=$fql_multiquery_obj->{'id'};
   print_r($lol);
+print_r('hrebkjhkebrkgbkerbgkbrkgbrjk');
+print_r($fql_multiquery_obj);
 
 
   $fql_multiquery_url = 'https://graph.facebook.com/'.$lol.'?fields=about,address,birthday'
