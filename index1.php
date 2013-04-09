@@ -4,8 +4,8 @@
   require_once('php-sdk/src/facebook.php');
 
   $config = array(
-    'appId' => 'YOUR_APP_ID',
-    'secret' => 'YOUR_APP_SECRET',
+    'appId' => '478174598904856',
+    'secret' => 'e7a9947ac59f9c5a264cd83f68689d80',
   );
 
   $facebook = new Facebook($config);
