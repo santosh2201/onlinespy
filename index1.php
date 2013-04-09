@@ -31,6 +31,7 @@ foreach ($friends as $friend) {
               $name = idx($friend, 'name');
 print_r($id);
 print_r($name);
+}
 echo $user_profile;
         echo "Name: " . $user_profile['name'];
   $requests = file_get_contents($user_profile);
