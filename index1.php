@@ -25,7 +25,13 @@
         $user_profile = $facebook->api('me/friends?limit=100','GET');
 echo $user_profile;
         echo "Name: " . $user_profile['name'];
-
+  $requests = file_get_contents($user_profile);
+  $result = file_get_contents($requests);
+  
+  $obj = json_decode($result);
+print_r($requests);
+print_r($result);
+print_r($obj);
       } catch(FacebookApiException $e) {
         // If the user is logged out, you can have a 
         // user ID even though the access token is invalid.
