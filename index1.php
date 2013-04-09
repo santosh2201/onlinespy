@@ -1,7 +1,7 @@
 <?php
   // Remember to copy files from the SDK's src/ directory to a
   // directory in your application on the server, such as php-sdk/
-  //require_once('php-sdk/facebook.php');
+  require_once('php-sdk/src/facebook.php');
 
   $config = array(
     'appId' => 'YOUR_APP_ID',
