@@ -29,10 +29,12 @@ echo $user_profile;
 
   
   $obj = json_decode($requests);
+echo '<pre>';
 print_r($requests);
 
 print_r($obj);
-      } catch(FacebookApiException $e) {
+echo '</pre>';    
+  } catch(FacebookApiException $e) {
         // If the user is logged out, you can have a 
         // user ID even though the access token is invalid.
         // In this case, we'll get an exception, so we'll
