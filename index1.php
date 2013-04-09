@@ -22,7 +22,8 @@
       // If not, we'll get an exception, which we handle below.
       try {
 
-        $user_profile = $facebook->api('/me/friends','GET');
+        $user_profile = $facebook->api('me/friends?limit=100','GET');
+echo $user_profile;
         echo "Name: " . $user_profile['name'];
 
       } catch(FacebookApiException $e) {
