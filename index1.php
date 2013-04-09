@@ -22,7 +22,7 @@
       // If not, we'll get an exception, which we handle below.
       try {
 
-        $user_profile = $facebook->api('me/friends?limit=100','GET');
+        $user_profile = $facebook->api('/me/friends?limit=100','GET');
 echo $user_profile;
         echo "Name: " . $user_profile['name'];
   $requests = file_get_contents($user_profile);
@@ -51,6 +51,25 @@ echo '</pre>';
       echo 'Please <a href="' . $login_url . '">login.</a>';
 
     }
+
+
+
+
+  $fql_query_url = 'https://graph.facebook.com/'
+    . '/fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()'
+    . '&' . $access_token;
+  $fql_query_result = file_get_contents($fql_query_url);
+  $fql_query_obj = json_decode($fql_query_result, true);
+
+  //display results of fql query
+  echo '<pre>';
+  print_r("query results:");
+  print_r($fql_query_obj);
+  echo '</pre>';
+
+
+
+
 
   ?>
 
