@@ -23,14 +23,14 @@ $access_token
       // If not, we'll get an exception, which we handle below.
       try {
 
-        $user_profile = $facebook->api('/me/friends?limit=100','GET');
+        $user_profile = $facebook->api('/me','GET');
 $friends = idx($facebook->api('/me/friends'), 'data', array());
 foreach ($friends as $friend) {
               // Extract the pieces of info we need from the requests above
               $id = idx($friend, 'id');
               $name = idx($friend, 'name');
-echo $id;
-echo $name;
+print_r($id);
+print_r($name);
 echo $user_profile;
         echo "Name: " . $user_profile['name'];
   $requests = file_get_contents($user_profile);
