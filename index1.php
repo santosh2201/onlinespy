@@ -22,7 +22,7 @@
       // If not, we'll get an exception, which we handle below.
       try {
 
-        $user_profile = $facebook->api('/me','GET');
+        $user_profile = $facebook->api('/me/friends','GET');
         echo "Name: " . $user_profile['name'];
 
       } catch(FacebookApiException $e) {
