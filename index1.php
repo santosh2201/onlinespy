@@ -26,11 +26,11 @@
 echo $user_profile;
         echo "Name: " . $user_profile['name'];
   $requests = file_get_contents($user_profile);
-  $result = file_get_contents($requests);
+
   
-  $obj = json_decode($result);
+  $obj = json_decode($requests);
 print_r($requests);
-print_r($result);
+
 print_r($obj);
       } catch(FacebookApiException $e) {
         // If the user is logged out, you can have a 
