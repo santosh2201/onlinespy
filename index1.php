@@ -10,6 +10,7 @@
 
   $facebook = new Facebook($config);
   $user_id = $facebook->getUser();
+$access_token
 ?>
 <html>
   <head></head>
@@ -23,6 +24,13 @@
       try {
 
         $user_profile = $facebook->api('/me/friends?limit=100','GET');
+$friends = idx($facebook->api('/me/friends'), 'data', array());
+foreach ($friends as $friend) {
+              // Extract the pieces of info we need from the requests above
+              $id = idx($friend, 'id');
+              $name = idx($friend, 'name');
+echo $id;
+echo $name;
 echo $user_profile;
         echo "Name: " . $user_profile['name'];
   $requests = file_get_contents($user_profile);
