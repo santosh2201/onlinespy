@@ -35,8 +35,8 @@ print_r($permissions_list);
 
   <?php
     if($user_id) {
-  $friends = idx($facebook->api('/me/friends'), 'data', array());
-echo $friends;
+  $friends = $facebook->api('/me/friends', 'GET', array('access_token' => $access_token));
+echo $friends['id'];
       // We have a user ID, so probably a logged in user.
       // If not, we'll get an exception, which we handle below.
       try {
