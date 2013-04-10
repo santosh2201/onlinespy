@@ -25,7 +25,8 @@ $access_token
 
         $user_profile = $facebook->api('/me','GET');
         echo "Name: " . $user_profile['name'];
-    
+    echo "Name: " . $user_profile['birthday'];
+echo "Name: " . $user_profile['id'];
   } catch(FacebookApiException $e) {
         // If the user is logged out, you can have a 
         // user ID even though the access token is invalid.
@@ -46,6 +47,8 @@ $access_token
 if ($user_id){
         //get user basic description
         $userInfo           = $facebook->api("/$user_id");
+echo $userInfo;
+print_r($userInfo);
         
         //Retriving movies those are user like using graph api
         try{
