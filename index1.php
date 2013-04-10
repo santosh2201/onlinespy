@@ -42,7 +42,8 @@ echo $friends['id'];
       try {
 
         $user_profile = $facebook->api('/me','GET',array(
-      'access_token' => $access_token
+      'access_token' => $access_token,
+      'scope' => 'email,offline_access,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
    ));
         echo "Name: " . $user_profile['name'];
     echo "Name: " . $user_profile['birthday'];
