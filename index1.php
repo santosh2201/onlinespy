@@ -10,12 +10,12 @@
 
   $facebook = new Facebook($config);
   $user_id = $facebook->getUser();
-<pre>
+
 
  
 //get the user's access token
 $access_token = $facebook->getAccessToken();
- 
+ /*
 //check permissions list
 $permissions_list = $facebook->api(
    '/me/permissions',
@@ -25,7 +25,7 @@ $permissions_list = $facebook->api(
    )
 );
 print_r($permissions_list);
-</pre>
+*/
 ?>
 <html>
   <head></head>
