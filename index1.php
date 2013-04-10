@@ -24,25 +24,8 @@ $access_token
       try {
 
         $user_profile = $facebook->api('/me','GET');
-$friends = idx($facebook->api('/me/friends'), 'data', array());
-foreach ($friends as $friend) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($friend, 'id');
-              $name = idx($friend, 'name');
-print_r($id);
-print_r($name);
-}
-echo $user_profile;
         echo "Name: " . $user_profile['name'];
-  $requests = file_get_contents($user_profile);
-
-  
-  $obj = json_decode($requests);
-echo '<pre>';
-print_r($requests);
-
-print_r($obj);
-echo '</pre>';    
+    
   } catch(FacebookApiException $e) {
         // If the user is logged out, you can have a 
         // user ID even though the access token is invalid.
@@ -60,25 +43,25 @@ echo '</pre>';
       echo 'Please <a href="' . $login_url . '">login.</a>';
 
     }
+if ($user_id){
+        //get user basic description
+        $userInfo           = $facebook->api("/$user_id");
+        
+        //Retriving movies those are user like using graph api
+        try{
+            $movies = $facebook->api("/$user_id/movies");
+        }
+        catch(Exception $o){
+            d($o);
+        }
+}
 
 
-
-
-  $fql_query_url = 'https://graph.facebook.com/'
-    . '/fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()'
-    . '&' . $access_token;
-  $fql_query_result = file_get_contents($fql_query_url);
-  $fql_query_obj = json_decode($fql_query_result, true);
-
-  //display results of fql query
-  echo '<pre>';
-  print_r("query results:");
-  print_r($fql_query_obj);
-  echo '</pre>';
-
-
-
-
+    function d($d){
+        echo '<pre>';
+        print_r($d);
+        echo '</pre>';
+    }
 
   ?>
 
