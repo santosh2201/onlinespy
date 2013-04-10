@@ -3,9 +3,9 @@
  * @author: Mahmud Ahsan (http://thinkdiff.net)
  */
     //facebook application
-    $fbconfig['appid' ]     = "";
-    $fbconfig['secret']     = "";
-    $fbconfig['baseurl']    = ""; //"http://thinkdiff.net/demo/newfbconnect1/php/sdk3/index.php";
+    $fbconfig['appid' ]     = "478174598904856";
+    $fbconfig['secret']     = "e7a9947ac59f9c5a264cd83f68689d80";
+    $fbconfig['baseurl']    = "https://rocky-woodland-3057.herokuapp.com/"; //"http://thinkdiff.net/demo/newfbconnect1/php/sdk3/index.php";
 
     //
     if (isset($_GET['request_ids'])){
