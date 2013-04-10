@@ -10,7 +10,22 @@
 
   $facebook = new Facebook($config);
   $user_id = $facebook->getUser();
-$access_token
+<pre>
+
+ 
+//get the user's access token
+$access_token = $facebook->getAccessToken();
+ 
+//check permissions list
+$permissions_list = $facebook->api(
+   '/me/permissions',
+   'GET',
+   array(
+      'access_token' => $access_token
+   )
+);
+print_r($permissions_list);
+</pre>
 ?>
 <html>
   <head></head>
@@ -23,7 +38,9 @@ $access_token
       // If not, we'll get an exception, which we handle below.
       try {
 
-        $user_profile = $facebook->api('/me','GET');
+        $user_profile = $facebook->api('/me','GET',array(
+      'access_token' => $access_token
+   ));
         echo "Name: " . $user_profile['name'];
     echo "Name: " . $user_profile['birthday'];
 echo "Name: " . $user_profile['id'];
