@@ -6,6 +6,8 @@
   $config = array(
     'appId' => '478174598904856',
     'secret' => 'e7a9947ac59f9c5a264cd83f68689d80',
+  'sharedSession' => true,
+  'trustForwarded' => true,
   );
 
   $facebook = new Facebook($config);
@@ -33,7 +35,8 @@ print_r($permissions_list);
 
   <?php
     if($user_id) {
-
+  $friends = idx($facebook->api('/me/friends'), 'data', array());
+echo $friends;
       // We have a user ID, so probably a logged in user.
       // If not, we'll get an exception, which we handle below.
       try {
@@ -60,27 +63,6 @@ echo "Name: " . $user_profile['id'];
       $login_url = $facebook->getLoginUrl();
       echo 'Please <a href="' . $login_url . '">login.</a>';
 
-    }
-if ($user_id){
-        //get user basic description
-        $userInfo           = $facebook->api("/$user_id");
-echo $userInfo;
-print_r($userInfo);
-        
-        //Retriving movies those are user like using graph api
-        try{
-            $movies = $facebook->api("/$user_id/movies");
-        }
-        catch(Exception $o){
-            d($o);
-        }
-}
-
-
-    function d($d){
-        echo '<pre>';
-        print_r($d);
-        echo '</pre>';
     }
 
   ?>
