@@ -43,7 +43,7 @@ echo $friends['id'];
 
         $user_profile = $facebook->api('/me','GET',array(
       'access_token' => $access_token,
-      'scope' => 'email,offline_access,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
+'scope' => 'email,offline_access,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
    ));
         echo "Name: " . $user_profile['name'];
     echo "Name: " . $user_profile['birthday'];
@@ -60,27 +60,15 @@ echo "Name: " . $user_profile['id'];
       }   
     } else {
 
+      // No user, print a link for the user to login
+      $login_url = $facebook->getLoginUrl(array(
+                'scope'         => 'email,offline_access,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
+            ));
+      echo 'Please <a href="' . $login_url . '">login.</a>';
 
     }
 
   ?>
-
-      <?php if (!$user) { ?>
-       You've to login using FB Login Button to see api calling result.
-       <a href="<?php $loginUrl ?>">Facebook Login</a>
-   <?php } else { ?>
-       <a href="<?php $logoutUrl ?>">Facebook Logout</a>
-   <?php }
-
-$loginUrl   = $facebook->getLoginUrl(
-            array(
-                'scope'         => 'email,offline_access,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown',
-                'redirect_uri'  => $fbconfig['baseurl']
-            )
-    );
-
- ?>
-
 
   </body>
 </html>
