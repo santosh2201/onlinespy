@@ -23,7 +23,7 @@
 
   // run fql query
   $fql_query_url = 'https://graph.facebook.com/'
-    . 'fql?q=SELECT+uid2+FROM+friend+WHERE+uid1=me()'
+    . 'fql?q=SELECT+uid,name,online_presence+FROM+user+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())'
     . '&access_token=' . $access_token;
   $fql_query_result = file_get_contents($fql_query_url);
   $fql_query_obj = json_decode($fql_query_result, true);
