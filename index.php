@@ -5,6 +5,21 @@
 
   $code = $_REQUEST["code"];
 
+
+  require_once('php-sdk/src/facebook.php');
+
+  $config = array(
+    'appId' => '478174598904856',
+    'secret' => 'e7a9947ac59f9c5a264cd83f68689d80',
+  'sharedSession' => true,
+  'trustForwarded' => true,
+  );
+
+  $facebook = new Facebook($config);
+  $user_id = $facebook->getUser();
+
+
+
  // auth user
  if(empty($code)) {
     $dialog_url = 'https://www.facebook.com/dialog/oauth?client_id=' 
@@ -23,7 +38,7 @@
 
   // run fql query
   $fql_query_url = 'https://graph.facebook.com/'
-    . 'fql?q=SELECT+uid+FROM+user+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())'
+    . 'fql?q=SELECT+uid+FROM+user+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1='.$user_id.')'
     . '&access_token=' . $access_token;
   $fql_query_result = file_get_contents($fql_query_url);
   $fql_query_obj = json_decode($fql_query_result, true);
