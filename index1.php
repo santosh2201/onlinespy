@@ -59,13 +59,7 @@ $fname= $facebook->api('/'.$fvalue[id].'?fields=name');
 
 
 
-$fql = "SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 = me())";
-$active = $this->facebook->api(array(
-  'method' => 'fql.query',
-  'query' =>$fql
-));
 
-print_r($active);
 
 
 /*
