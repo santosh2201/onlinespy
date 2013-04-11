@@ -46,7 +46,7 @@ $friends = $facebook->api('/'.$user_id.'/friends');
                        $friendsList[] = $fvalue[id];
 //print_r($friendsList);
 $fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
-//print_r($fname);		
+print_r($fname);		
                    }
 
                 }
@@ -56,23 +56,6 @@ $fname= $facebook->api('/'.$fvalue[id].'?fields=name');
 
 
 
-
-
-
-
-  $my_url = 'https://rocky-woodland-3057.herokuapp.com/';
-
-
-
- $fql    =   "SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 = me())";
-      $param  =   array(
-         'method'    => 'fql.query',
-         'query'     => $fql,
-         'callback'  => $my_url
-      );
-      $fqlResult   =   $facebook->api($param);//Here you have your FQL result set
-
-print_r($fqlResult);
 
 
 
