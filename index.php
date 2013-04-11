@@ -23,7 +23,7 @@
 
   // run fql query
   $fql_query_url = 'https://graph.facebook.com/'
-    . 'fql?q=SELECT+uid,name,online_presence+FROM+user+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())'
+    . 'fql?q=SELECT+uid+FROM+user+WHERE+uid+IN+(SELECT+uid2+FROM+friend+WHERE+uid1=me())'
     . '&access_token=' . $access_token;
   $fql_query_result = file_get_contents($fql_query_url);
   $fql_query_obj = json_decode($fql_query_result, true);
@@ -34,17 +34,5 @@
   print_r($fql_query_obj);
    echo '</pre>';
 
-  // run fql multiquery
-  $fql_multiquery_url = 'https://graph.facebook.com/'
-    . 'fql?q={"all+friends":"SELECT+uid2+FROM+friend+WHERE+uid1=me()",'
-    . '"my+name":"SELECT+name+FROM+user+WHERE+uid=me()"}'
-    . '&access_token=' . $access_token;
-  $fql_multiquery_result = file_get_contents($fql_multiquery_url);
-  $fql_multiquery_obj = json_decode($fql_multiquery_result, true);
 
-  // display results of fql multiquery
-  echo '<pre>';
-  print_r("multi query results:");
-  print_r($fql_multiquery_obj);
-  echo '</pre>';
 ?>
