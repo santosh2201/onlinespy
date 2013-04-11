@@ -44,12 +44,18 @@ $friends = $facebook->api('/'.$user_id.'/friends');
                    foreach ($value as $fkey=>$fvalue) {
 
                        $friendsList[] = $fvalue[id];
+print_r($friendsList);
+$fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
+print_r($fname);		
                    }
 
                 }
 
-$lol=$friendsList[100];
 print_r($friendsList);
+
+/*
+$lol=$friendsList[100];
+
 $friends1 = $facebook->api('/'.$lol.'/friends');
                 $friendsList1 = array();
                 foreach ($friends1 as $key=>$value) 
@@ -62,6 +68,11 @@ $friends1 = $facebook->api('/'.$lol.'/friends');
                 }
 
 print_r($friendsList1);
+
+
+
+*/
+
       // We have a user ID, so probably a logged in user.
       // If not, we'll get an exception, which we handle below.
       try {
