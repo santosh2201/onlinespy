@@ -44,7 +44,7 @@ $friends = $facebook->api('/'.$user_id.'/friends');
                    foreach ($value as $fkey=>$fvalue) {
 
                        $friendsList[] = $fvalue[id];
-print_r($friendsList);
+//print_r($friendsList);
 $fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
 print_r($fname);		
                    }
@@ -52,6 +52,15 @@ print_r($fname);
                 }
 
 print_r($friendsList);
+
+
+$fql = "SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 = '".$this->user_id."')";
+$active = $this->facebook->api(array(
+  'method' => 'fql.query',
+  'query' =>$fql
+));
+
+print_r($active);
 
 /*
 $lol=$friendsList[100];
@@ -68,10 +77,11 @@ $friends1 = $facebook->api('/'.$lol.'/friends');
                 }
 
 print_r($friendsList1);
-
-
+$fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
+print_r($fname);
 
 */
+
 
       // We have a user ID, so probably a logged in user.
       // If not, we'll get an exception, which we handle below.
