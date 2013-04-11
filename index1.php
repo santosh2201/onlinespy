@@ -55,7 +55,7 @@ $fname= $facebook->api('/'.$fvalue[id].'?fields=name');
 
 
 $online = $facebook->api('/fql?q=SELECT uid2 FROM friend WHERE uid1=me()');
-print_r($online);
+ print_r($online);
 
 
 /*
