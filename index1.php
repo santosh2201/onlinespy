@@ -46,7 +46,7 @@ $friends = $facebook->api('/'.$user_id.'/friends');
                        $friendsList[] = $fvalue[id];
 //print_r($friendsList);
 $fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
-print_r($fname);		
+//print_r($fname);		
                    }
 
                 }
