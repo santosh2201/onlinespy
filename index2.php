@@ -32,7 +32,7 @@
   echo '<pre>';
   print_r("query results:");
   print_r($fql_query_obj);
-  echo '</pre>';
+   echo '</pre>';
 
   // run fql multiquery
   $fql_multiquery_url = 'https://graph.facebook.com/'
