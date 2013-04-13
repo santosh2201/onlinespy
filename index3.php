@@ -13,7 +13,7 @@
   $facebook = new Facebook($config);
   $user_id = $facebook->getUser();
 
-print_r($user_id);
+ print_r($user_id);
  
 //get the user's access token
 $access_token = $facebook->getAccessToken();
