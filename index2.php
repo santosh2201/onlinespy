@@ -13,7 +13,7 @@
   }
 
   // get user access_token
-  $token_url = 'https://graph.facebook.com/oauth/access_token?client_id='
+   $token_url = 'https://graph.facebook.com/oauth/access_token?client_id='
     . $app_id . '&redirect_uri=' . urlencode($my_url) 
     . '&client_secret=' . $app_secret 
     . '&code=' . $code;
