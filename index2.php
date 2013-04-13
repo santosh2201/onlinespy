@@ -15,6 +15,7 @@
 print_r($user_id);
  
 $access_token = $facebook->getAccessToken();
+  print_r($access_token);
 
 ?>
 <html>
