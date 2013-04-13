@@ -49,7 +49,7 @@ $fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');
   //Create Query
   $params = array(
       'method' => 'fql.query',
-      'query' => "SELECT uid, pic, pic_square, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = 111111111)",
+      'query' => "SELECT uid, pic, pic_square, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = '.$user_id.')"
   );
 
   //Run Query
