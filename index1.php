@@ -16,7 +16,7 @@
 print_r($user_id);
  
 //get the user's access token
-$access_token = $facebook->getAccessToken();
+$facebook->setAccessToken($new_access_token);
  /*
 //check permissions list
 $permissions_list = $facebook->api(
@@ -35,7 +35,7 @@ print_r($permissions_list);
 
   <?php
     if($user_id) {
-  $friends = $facebook->api('/me/friends', 'GET', array('access_token' => $access_token));
+  $friends = $facebook->api('/me/friends', 'GET', array('access_token' => $new_access_token));
 
 $friends = $facebook->api('/'.$user_id.'/friends');
                 $friendsList = array();
