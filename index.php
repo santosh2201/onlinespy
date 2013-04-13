@@ -24,7 +24,7 @@
  // auth user
  if(empty($code)) {
     $dialog_url = 'https://www.facebook.com/dialog/oauth?client_id=' 
-    . $app_id . '&redirect_uri=' . urlencode($my_url) ;
+    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_birthday,user_birthday,read_mailbox' ;
     echo("<script>top.location.href='" . $dialog_url . "'</script>");
   }
 
@@ -32,8 +32,7 @@
   $token_url = 'https://graph.facebook.com/oauth/access_token?client_id='
     . $app_id . '&redirect_uri=' . urlencode($my_url) 
     . '&client_secret=' . $app_secret 
-    . '&code=' . $code
-    .'&scope=friends_birthday,user_birthday,read_mailbox';
+    . '&code=' . $code;
 
   // response is of the format "access_token=AAAC..."
   $access_token = substr(file_get_contents($token_url), 13);
