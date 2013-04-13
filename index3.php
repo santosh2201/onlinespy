@@ -46,7 +46,7 @@ $friends = $facebook->api('/'.$user_id.'/friends');
                        $friendsList[] = $fvalue[id];
 //print_r($friendsList);
 $fname= $facebook->api('/'.$fvalue[id].'?fields=name');  
-print_r($fname);    
+                     //print_r($fname);    
                      //$fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');  
                      //print_r($fpic);                      
                    }
@@ -55,7 +55,7 @@ print_r($fname);
 
 $params=array(
     'method'=> 'fql.query', 
-    'query' =>"SELECT uid, pic, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = '.$user_id.')",
+    'query' =>"SELECT uid, pic, name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me())",
   );
       $result=$facebook->api($params);
       
