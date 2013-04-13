@@ -45,10 +45,10 @@ $friends = $facebook->api('/'.$user_id.'/friends');
 
                        $friendsList[] = $fvalue[id];
 //print_r($friendsList);
-$fname= $facebook->api('/'.$fvalue[id].'?fields=name');  
+$fname= $facebook->api('/'.$fvalue[id].'?fields=name,birthday');  
 print_r($fname);    
-$fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');  
- print_r($fpic);                      
+                     //$fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');  
+                     // print_r($fpic);                      
                    }
 
                 }
