@@ -35,9 +35,15 @@ $friends = $facebook->api('/'.$user_id.'/friends');
 $fname= $facebook->api('/'.$fvalue[id].'?fields=name');  
 print_r($fname);    
 $fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');  
- print_r($fpic);        
-       
-        
+ print_r($fpic);               
+                     
+                   }
+
+                }  
+      
+      
+      
+              
 
 
   //Create Query
@@ -48,11 +54,9 @@ $fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');
 
   //Run Query
   $result = $facebook->api($params);
-        
-                     
-                   }
 
-                }  
+      
+      
     } else {
 
       // No user, print a link for the user to login
