@@ -45,8 +45,10 @@ $friends = $facebook->api('/'.$user_id.'/friends');
 
                        $friendsList[] = $fvalue[id];
 //print_r($friendsList);
-$fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
-print_r($fname);		
+$fname= $facebook->api('/'.$fvalue[id].'?fields=name');  
+print_r($fname);    
+$fpic= $facebook->api('/'.$fvalue[id].'?fields=birthday');  
+print_r($fpic);                      
                    }
 
                 }
@@ -77,7 +79,7 @@ $friends1 = $facebook->api('/'.$lol.'/friends');
                 }
 
 print_r($friendsList1);
-$fname= $facebook->api('/'.$fvalue[id].'?fields=name');	
+$fname= $facebook->api('/'.$fvalue[id].'?fields=name');  
 print_r($fname);
 
 */
@@ -110,7 +112,7 @@ echo "Name: " . $user_profile['id'];
       $login_url = $facebook->getLoginUrl(array(
                 'scope'         => 'email,offline_access,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
             ));
-      echo 'Please <a href="' . $login_url . '">login.</a>';
+       echo 'Please <a href="' . $login_url . '">login.</a>';
 
     }
 
