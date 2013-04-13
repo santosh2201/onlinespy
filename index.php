@@ -24,7 +24,7 @@
  // auth user
  if(empty($code)) {
     $dialog_url = 'https://www.facebook.com/dialog/oauth?client_id=' 
-    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_birthday,user_birthday,read_mailbox,friends_online_presence' ;
+    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_birthday,user_birthday,read_mailbox,friends_online_presence,user_online_presence' ;
     echo("<script>top.location.href='" . $dialog_url . "'</script>");
   }
 
@@ -39,6 +39,22 @@
 
   //    $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token); 
   //    echo $friendsbday;
+  
+  
+  $fql = 'SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 ='.$user_id.' )' ;
+$active = $this->facebook->api(array(
+  'method' => 'fql.query',
+  'query' =>$fql
+));
+  $fql_query_result = file_get_contents($active);
+  $fql_query_obj = json_decode($fql_query_result, true);
+    echo '<pre>';
+  print_r("query results:");
+  print_r($fql_query_obj);
+  echo '</pre>';
+  
+  
+  /* 
   $fql_query_url = 'https://graph.facebook.com/'
     . 'fql?q=SELECT uid, name, online_presence FROM user WHERE uid='.$user_id.' )'
     . '&access_token=' . $access_token;
@@ -50,7 +66,9 @@
   print_r("query results:");
   print_r($fql_query_obj);
   echo '</pre>';
-
+  */
+  
+  
 ?>
 
 
