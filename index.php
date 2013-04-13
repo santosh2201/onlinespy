@@ -37,7 +37,7 @@
   // response is of the format "access_token=AAAC..."
   $access_token = substr(file_get_contents($token_url), 13);
 
-      $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token); 
+  $friendsbday = $facebook->api('/'.$user_id.'/friends?fields=birthday?access_token='.$access_token); 
        echo $friendsbday;
 
 
