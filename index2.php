@@ -42,7 +42,7 @@ $friends = $facebook->api('/'.$user_id.'/friends');
 
                 }  
       
-  $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token);    
+  $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token.'?scope=friends_birthday');    
       print_r($friendsbday);
       
               
