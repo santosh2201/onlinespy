@@ -24,7 +24,7 @@
  // auth user
  if(empty($code)) {
     $dialog_url = 'https://www.facebook.com/dialog/oauth?client_id=' 
-    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_birthday,user_birthday,read_mailbox,friends_online_presence' ;
+    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_birthday,user_birthday,read_mailbox' ;
     echo("<script>top.location.href='" . $dialog_url . "'</script>");
   }
 
@@ -37,9 +37,19 @@
   // response is of the format "access_token=AAAC..."
   $access_token = substr(file_get_contents($token_url), 13);
 
-  $friendsbday = $facebook->api('/'.$user_id.'/friends?fields=birthday?access_token='.$access_token); 
-       echo $friendsbday;
+  //    $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token); 
+  //    echo $friendsbday;
+  $fql_query_url = 'https://graph.facebook.com/'
+    . 'fql?q=SELECT+uid, name, online_presence+FROM+user+WHERE+uid+IN+( SELECT+uid2+FROM+friend+WHERE+uid1 ='.$user_id.' )'
+    . '&access_token=' . $access_token;
+  $fql_query_result = file_get_contents($fql_query_url);
+  $fql_query_obj = json_decode($fql_query_result, true);
 
+  // display results of fql query
+  echo '<pre>';
+  print_r("query results:");
+  print_r($fql_query_obj);
+  echo '</pre>';
 
 ?>
 
