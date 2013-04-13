@@ -42,11 +42,15 @@ $friends = $facebook->api('/'.$user_id.'/friends');
 
                 }  
       
-  $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token.'?scope=friends_birthday');    
-      print_r($friendsbday);
+      // $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token.'?scope=friends_birthday'); 
+    $friendsbday="https://graph.facebook.com/".$user_id."/friends.fields(birthday)?access_token=".$access_token;  
+       print_r($friendsbday);
       
-              
 
+foreach($all_friends_profile as $profile)
+{
+   echo $profile->name.' birthay='.$profile->birthday_date;                  
+}
 
       
       
