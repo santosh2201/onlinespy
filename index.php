@@ -58,7 +58,7 @@
 }
   foreach($result as $punit){
     echo '<p>';
-    echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'">';
+    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'">';
     print_r($punit[name]);
     echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="height:10px, width:10px" src="http://www.zeitgeist13.com/punit.png">';
       echo '</p>';
