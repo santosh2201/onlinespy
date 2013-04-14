@@ -56,10 +56,19 @@
  
     // read results
 }
+  $i=0;
+  foreach($result as $count){
+    $i=$i+1;
+  }
+  
   echo '<p>';
   echo '<font size=14px; color=blue; face=Adobe Hebrew>Know if your friend is online without you going online: </font> ';
     echo '</p>';
-  foreach($result as $punit){
+  
+    echo 'Number of online friends=';
+    print_r($i);
+    
+    foreach($result as $punit){
     echo '<p>';
     echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'"> &nbsp;&nbsp;&nbsp;&nbsp;';
     print_r($punit[name]);
