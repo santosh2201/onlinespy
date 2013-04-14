@@ -65,7 +65,8 @@
   echo '<font size=14px; color=blue; face=Adobe Hebrew>Know if your friend is online without you going online: </font> ';
     echo '</p>';
   
-    echo 'Number of online friends=';
+  echo '<p/>';
+  echo 'Number of online friends = ';
     print_r($i);
     
     foreach($result as $punit){
