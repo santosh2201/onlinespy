@@ -78,8 +78,8 @@ $active = $this->facebook->api(array(
 */
 
   if($user_id){
-    $fql = "SELECT+uid, name, pic_square, online_presence+FROM +user+ WHERE+ uid+ IN+(SELECT+ uid2+ FROM+ friend+ WHERE+ uid1 = '.$user_id.')";
- 
+    //    $fql = "SELECT uid, name, pic_square, online_presence FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = '.$user_id.')";
+     $fql = "SELECT name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = '.$user_id.')";
     $result = $facebook->api(array(
         'method' => 'fql.query',
         'query' => $fql,
