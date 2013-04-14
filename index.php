@@ -40,8 +40,8 @@
   //    $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token); 
   //    echo $friendsbday;
   
-  
-  $fql = 'SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 =me() )' ;
+  /*  
+  $fql = 'SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 ='.$user_id.' )' ;
 $active = $this->facebook->api(array(
   'method' => 'fql.query',
   'query' =>$fql
@@ -52,6 +52,18 @@ $active = $this->facebook->api(array(
   print_r("query results:");
   print_r($fql_query_obj);
   echo '</pre>';
+  */  
+  $params = array(
+        'method' => 'fql.query',
+        'query' => "SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 ='.$user_id.' )",
+    );
+    //Run Query
+    $result = $facebook->api($params);
+    print_r("query results:");
+    print_r($result);
+
+?>
+
   
   
   /* 
