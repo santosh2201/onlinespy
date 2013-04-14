@@ -90,6 +90,7 @@ $active = $this->facebook->api(array(
 }
   foreach($result as $punit){
     print_r($punit);
+  }
   
 
 ?>
