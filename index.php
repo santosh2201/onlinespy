@@ -56,6 +56,9 @@
  
     // read results
 }
+  echo '<p>';
+  echo '<p style="font-size:16px">Know if your friend is online presence without you going online</p> ';
+    echo '</p>';
   foreach($result as $punit){
     echo '<p>';
     echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'"> &nbsp;&nbsp;&nbsp;&nbsp;';
