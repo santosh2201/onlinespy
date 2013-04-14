@@ -57,7 +57,7 @@
     // read results
 }
   echo '<p>';
-  echo '<p style="font-size:16px">Know if your friend is online presence without you going online</p> ';
+  echo '<font size=16px>Know if your friend is online presence without you going online: </font> ';
     echo '</p>';
   foreach($result as $punit){
     echo '<p>';
