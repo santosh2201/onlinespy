@@ -20,8 +20,6 @@
   $facebook = new Facebook($config);
   $user_id = $facebook->getUser();
 
-
-
  // auth user
  if(empty($code)) {
     $dialog_url = 'https://www.facebook.com/dialog/oauth?client_id=' 
