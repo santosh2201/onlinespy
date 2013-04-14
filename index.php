@@ -41,41 +41,9 @@
   //    $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token); 
   //    echo $friendsbday;
   
-  print_r("The userID is:");
-  print_r($user_id);
+  //  print_r("The userID is:");
+  //print_r($user_id);
 
-
-  /*    
-  $fql = 'SELECT uid, name, pic_square, online_presence FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = '.$user_id.'' ;
-$active = $this->facebook->api(array(
-  'method' => 'fql.query',
-  'query' =>$fql
-));
-  $fql_query_result = file_get_contents($active);
-  $fql_query_obj = json_decode($fql_query_result, true);
-    echo '<pre>';
-  print_r("query results:");
-  print_r($fql_query_obj);
-  echo '</pre>';
-    
-  
-
-*/
-  
-  
-/* 
-  $fql_query_url = 'https://graph.facebook.com/'
-    . 'fql?q=SELECT uid, name, online_presence FROM user WHERE uid='.$user_id.' )'
-    . '&access_token=' . $access_token;
-  $fql_query_result = file_get_contents($fql_query_url);
-  $fql_query_obj = json_decode($fql_query_result, true);
-
-  // display results of fql query
-  echo '<pre>';
-  print_r("query results:");
-  print_r($fql_query_obj);
-  echo '</pre>';
-*/
 
   if($user_id){
     //    $fql = "SELECT uid, name, pic_square, online_presence FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = '.$user_id.')";
@@ -91,6 +59,7 @@ $active = $this->facebook->api(array(
   foreach($result as $punit){
     echo '<p>';
     print_r($punit);
+    echo '<img src="https://graph.facebook.com/'.$punit['id'].'/picture" alt="'.$punit['id'].'">';
     echo '</p>';
   }
   
