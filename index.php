@@ -41,7 +41,7 @@
   //    echo $friendsbday;
   
   
-  $fql = 'SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 ='.$user_id.' )' ;
+  $fql = 'SELECT uid, name, online_presence, status FROM user WHERE uid IN ( SELECT uid2 FROM friend WHERE uid1 =me() )' ;
 $active = $this->facebook->api(array(
   'method' => 'fql.query',
   'query' =>$fql
