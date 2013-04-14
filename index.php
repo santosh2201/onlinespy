@@ -59,7 +59,7 @@
   foreach($result as $punit){
     echo '<p>';
     print_r($punit);
-    echo '<img src="https://graph.facebook.com/'.$punit[id].'/picture" alt="'.$punit[id].'">';
+    echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'">';
     echo '</p>';
   }
   
