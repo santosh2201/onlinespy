@@ -82,6 +82,6 @@ echo '<div class=multi-column>';
       echo '</p>';
   }
   
-  echo '</div>;'
+  echo '</div>';
 ?>
 
