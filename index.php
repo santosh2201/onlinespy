@@ -66,7 +66,14 @@
   echo '<p/>';
   echo 'Number of online friends = ';
     print_r($i);
+
+.multi-column {
+    /* Standard */
+    column-count: 2;
+    column-width: 150px;
+  }
     
+echo '<div class=multi-column>';    
     foreach($result as $punit){
     echo '<p>';
     echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'"> &nbsp;&nbsp;&nbsp;&nbsp;';
@@ -75,6 +82,6 @@
       echo '</p>';
   }
   
-
+  echo '</div>;'
 ?>
 
