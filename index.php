@@ -70,11 +70,8 @@
 // Default # of Columns
 $numcols = 2;
 
-// Number of Items
-$numitems = count($i);
-
 // Number of Rows
-$numrows = ceil($numitems/2);
+  $numrows = $i/2;
 
     echo '<table>';
     for ($row=1; $row <= $numrows; $row++)
