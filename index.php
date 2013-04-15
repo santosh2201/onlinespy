@@ -66,8 +66,42 @@
   echo '<p/>';
   echo 'Number of online friends = ';
     print_r($i);
-    
+  // printing the results in two columns    
+// Default # of Columns
+$numcols = 2;
 
+// Number of Items
+$numitems = count($i);
+
+// Number of Rows
+$numrows = ceil($numitems/2);
+
+    echo '<table>';
+    for ($row=1; $row <= $numrows; $row++)
+    {
+        $cell = 0;
+        echo ' <tr>'."\n";
+        for ($col=1; $col <= $numcols; $col++)
+        {
+        echo '  <td>'."\n";
+
+        if ($col===1)
+        {
+            $cell += $row;
+            print $i[$cell - 1];
+        }
+        else {
+            $cell += $numrows;
+            print $i[$cell - 1];
+        }
+        echo '  </td>'."\n";
+        }
+        echo ' </tr>'."\n";
+    }
+    echo '</table>';
+  
+  
+  
     foreach($result as $punit){
     echo '<p>';
     echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'"> &nbsp;&nbsp;&nbsp;&nbsp;';
