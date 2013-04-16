@@ -72,18 +72,3 @@
   
 
 ?>
-<html>
-<head>
-<script language="javascript">
-function reLoadPage(){
-  window.location.reload(); 
-}
-</script>
-</head>
-<body>
-<script>
-  window.setTimeout("reLoadPage()",15000);
-</script>
-</body>
-</html>
-
