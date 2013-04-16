@@ -1,3 +1,8 @@
+<html>
+  <script type="text/javascript">
+  setTimeout(function () { location.reload(true); }, 15000);
+</script>
+</html>
 
 <?php
   $app_id = '478174598904856';
@@ -79,8 +84,3 @@
 
 ?>
 
-<html>
-  <script type="text/javascript">
-  setTimeout(function () { location.reload(true); }, 15000);
-</script>
-</html>
