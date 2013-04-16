@@ -1,8 +1,4 @@
-<html>
-  <script type="text/javascript">
-  setTimeout(function () { location.reload(true); }, 15000);
-</script>
-</html>
+
 
 <?php
   $app_id = '478174598904856';
@@ -41,13 +37,6 @@
   // response is of the format "access_token=AAAC..."
   $access_token = substr(file_get_contents($token_url), 13);
 
-  //    $friendsbday = $facebook->api('/'.$user_id.'?fields=friends.fields(birthday)?access_token='.$access_token); 
-  //    echo $friendsbday;
-  
-  //  print_r("The userID is:");
-  //print_r($user_id);
-
-
   if($user_id){
 
     $fql = "SELECT uid,name,online_presence FROM user WHERE online_presence IN ('active')
@@ -83,4 +72,18 @@
   
 
 ?>
+<html>
+<head>
+<script language="javascript">
+function reLoadPage(){
+  window.location.reload(); 
+}
+</script>
+</head>
+<body>
+<script>
+  window.setTimeout("reLoadPage()",15000);
+</script>
+</body>
+</html>
 
