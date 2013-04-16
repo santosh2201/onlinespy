@@ -66,37 +66,6 @@
   echo '<p/>';
   echo 'Number of online friends = ';
     print_r($i);
-  // printing the results in two columns    
-// Default # of Columns
-$numcols = 2;
-
-// Number of Rows
-  $numrows = $i/2;
-
-    echo '<table>';
-    for ($row=1; $row <= $numrows; $row++)
-    {
-        $cell = 0;
-        echo ' <tr>'."\n";
-        for ($col=1; $col <= $numcols; $col++)
-        {
-        echo '  <td>'."\n";
-
-        if ($col===1)
-        {
-            $cell += $row;
-            print $i[$cell - 1];
-        }
-        else {
-            $cell += $numrows;
-            print $i[$cell - 1];
-        }
-        echo '  </td>'."\n";
-        }
-        echo ' </tr>'."\n";
-    }
-    echo '</table>';
-  
   
   
     foreach($result as $punit){
@@ -110,3 +79,8 @@ $numcols = 2;
 
 ?>
 
+<html>
+  <script type="text/javascript">
+  setTimeout(function () { location.reload(true); }, 15000);
+</script>
+</html>
