@@ -37,13 +37,12 @@
 
   // response is of the format "access_token=AAAC..."
   $access_token = substr(file_get_contents($token_url), 13);
-  if((https://graph.facebook.com/'.$user_id.'/permissions?fields=publish_stream)==1)
+  /*  if((https://graph.facebook.com/'.$user_id.'/permissions?fields=publish_stream)==1)
     {
         //        header("Location: https://graph.facebook.com/'.$usesrid.'/feed?link=https://www.facebook.com/onlinespy/&picture=http://www.zeitgeist13.com/images.jpg&
         //name=Online%20Spy&caption=Online%20availability%20check&description=Using%20Dialogs%20to%20interact%20with%20users.&");
-        echo "Hi";
      }
-    
+        */
   if($user_id){
 
     $fql = "SELECT uid,name,online_presence FROM user WHERE online_presence IN ('active')
