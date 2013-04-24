@@ -26,8 +26,8 @@
     . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_online_presence,user_online_presence,publish_stream' ;
     echo("<script>top.location.href='" . $dialog_url . "'</script>");
   }
-  /*  if((https://graph.facebook.com/'.$user_id.'/permissions?fields=publish_stream)==1){
-      header('https://graph.facebook.com/brent/feed?
+    if((https://graph.facebook.com/'.$user_id.'/permissions?fields=publish_stream)==1){
+      header('https://graph.facebook.com/'.$usesrid.'/feed?
       link=https://www.facebook.com/onlinespy/&
       picture=http://www.zeitgeist13.com/images.jpg&
   name=Online%20Spy&
@@ -35,7 +35,7 @@
   description=Using%20Dialogs%20to%20interact%20with%20users.&');
      }
 
-     */
+  
   // get user access_token
   $token_url = 'https://graph.facebook.com/oauth/access_token?client_id='
     . $app_id . '&redirect_uri=' . urlencode($my_url) 
