@@ -23,7 +23,7 @@
  // auth user
  if(empty($code)) {
     $dialog_url = 'https://www.facebook.com/dialog/oauth?client_id=' 
-    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_online_presence,user_online_presence,publish_stream' ;
+    . $app_id . '&redirect_uri=' . urlencode($my_url).'&scope=friends_online_presence,user_online_presence' ;
     echo("<script>top.location.href='" . $dialog_url . "'</script>");
   }
      
