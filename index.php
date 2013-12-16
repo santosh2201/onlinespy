@@ -72,7 +72,7 @@
     echo '<p>';
     echo '<img src="https://graph.facebook.com/'.$punit[uid].'/picture" alt="'.$punit[uid].'"> &nbsp;&nbsp;&nbsp;&nbsp;';
     print_r($punit[name]);
-    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="height:10px, width:10px" src="https://www.google.com/search?q=facebook+green+dot&newwindow=1&espv=210&es_sm=93&tbm=isch&source=lnt&tbs=isz:i&sa=X&ei=mC2vUta9GImIrQe8k4GYDA&ved=0CBsQpwUoAw&dpr=1&biw=1366&bih=642#facrc=_&imgdii=_&imgrc=N64MlA9QtYiA4M%3A%3BpabulmnYhA-n5M%3Bhttp%253A%252F%252Fwww.facebook.com%252Fimages%252Fhelp%252Fchat%252Fgreen_dot.gif%3Bhttp%253A%252F%252Fteayudofacebook.blogspot.com%252F2008%252F12%252Fchat-facebook.html%3B16%3B16">';
+    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img style="height:10px, width:10px" src="http://www.facebook.com/images/help/chat/green_dot.gif">';
       echo '</p>';
   }
 
