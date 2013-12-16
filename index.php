@@ -60,7 +60,7 @@
   }
   
   echo '<p>';
-  echo '<font size=14px; color=blue; face=Adobe Hebrew>Know if your friend is online without you going online: </font> ';
+  echo '<font size=14px; color=blue; face=Adobe Hebrew>Know your friends online presence without going online: </font> ';
     echo '</p>';
   
   echo '<p/>';
