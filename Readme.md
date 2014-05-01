@@ -1,7 +1,7 @@
 Facebook/Heroku sample app -- PHP
 =================================
 
-This is a sample app showing use of the Facebook Graph API, written in PHP, designed for deployment to [Heroku](http://www.heroku.com/).
+You can find this application live <a href="https://apps.facebook.com/onlinespy">here</a>.This is a sample app showing use of the Facebook Graph API, written in PHP, designed for deployment to [Heroku](http://www.heroku.com/).
 
 Run locally
 -----------
